@@ -1,83 +1,53 @@
-# API Aplikasi Pemesanan Servis Kendaraan
+# 🚗 Service Booking API
 
-## Tech Stack
-- Node.js
-- Express.js
-- MySQL
-- Sequelize
-- JWT Authentication
+![Node.js](https://img.shields.io/badge/Node.js-v14+-green.svg)
+![Express.js](https://img.shields.io/badge/Express.js-4.x-blue.svg)
+![Sequelize](https://img.shields.io/badge/Sequelize-ORM-brightgreen.svg)
+![MySQL](https://img.shields.io/badge/MySQL-8.x-orange.svg)
 
----
-
-## Fitur
-- Customer dapat melakukan booking servis (H+1)
-- Dealer login menggunakan JWT
-- Dealer mengatur jadwal servis dan kuota
-- Quota otomatis berkurang saat booking
-- Quota kembali jika status booking diubah menjadi "konfirmasi batal"
-- Dealer dapat melihat dan mengubah status booking
+API Sistem Pemesanan Servis Kendaraan
 
 ---
 
-## Struktur Database
-- dealers
-- service_schedules
-- service_bookings
-- service_statuses
+##  Tech Stack
+- **Backend:** Node.js, Express.js
+- **Database:** MySQL
+- **ORM:** Sequelize
+- **Auth:** JWT (JSON Web Token) & Bcrypt
 
 ---
 
-## Cara Menjalankan Project
+##  Struktur Database
+Sistem ini menggunakan 4 tabel utama:
+1.  `Dealers`: Informasi akun bengkel/dealer.
+2.  `Service_Schedules`: Master jadwal per tanggal beserta limit kuota.
+3.  `Service_Bookings`: Data reservasi dari customer.
+4.  `Service_Statuses`: Tabel referensi status (1: Pending, 2: Selesai, 3: Konfirmasi Batal).
 
-**1. Clone repository**:
-    ```bash
-    git clone <url-repository>
-    cd service-booking-app
-
-
-**2. Install dependency**:
-    ```bash
-    npm install
-
-**3. Konfigurasi Environment**:
-    ```bash
-    PORT=3000
-    DB_HOST=localhost
-    DB_USER=api_user
-    DB_PASS=password123
-    DB_NAME=service_booking
-
-    JWT_SECRET=supersecretkey
-
-**4. Jalankan Server**:
-    ```bash
-    npm run dev
-    npm run seed
-
-    ```arduino
-    http://localhost:3000
+---
 
 
-**Endpoint Utama**:
-    Dealer Admin Login
-    ```bash
-    POST /api/auth/login
+## 🚀 Cara Menjalankan Project
 
-    Jadwal Service (Dealer)
-    ```bash
-    GET    /api/schedules
-    POST   /api/schedules
-    PUT    /api/schedules/:id
-    DELETE /api/schedules/:id
+```bash
+# 1. Clone Repository
+git clone [https://github.com/agusmuhamadgi/service-booking-app.git](https://github.com/agusmuhamadgi/service-booking-app.git)
+cd service-booking-app
 
-    Booking Service (Customer)
-    ```bash
-    POST /api/bookings
+# 2. Install Dependencies
+npm install
 
-    Update Status Booking (Dealer)
-    ```bash
-    PUT /api/bookings/:id/status
+# 3. Konfigurasi Environment
+# Buat file .env dan isi:
+PORT=3000
+DB_HOST=127.0.0.1
+DB_USER=root
+DB_PASS=password123
+DB_NAME=service_booking
+JWT_SECRET=supersecretkey
 
+# 4. Setup Database & Seed
+nnpm run seed
 
-
-
+# 5. Jalankan Server
+npm run dev
