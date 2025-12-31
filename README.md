@@ -1,4 +1,4 @@
-# 🚗 Service Booking API
+# Service Booking API
 
 ![Node.js](https://img.shields.io/badge/Node.js-v14+-green.svg)
 ![Express.js](https://img.shields.io/badge/Express.js-4.x-blue.svg)
@@ -31,7 +31,7 @@ Sistem ini menggunakan 4 tabel utama:
 
 ```bash
 # 1. Clone Repository
-git clone [https://github.com/agusmuhamadgi/service-booking-app.git](https://github.com/agusmuhamadgi/service-booking-app.git)
+git clone https://github.com/agusmuhamadgi/service-booking-app.git
 cd service-booking-app
 
 # 2. Install Dependencies
@@ -47,7 +47,23 @@ DB_NAME=service_booking
 JWT_SECRET=supersecretkey
 
 # 4. Setup Database & Seed
-nnpm run seed
+npm run seed
 
 # 5. Jalankan Server
 npm run dev
+
+Dokumentasi Endpoint
+# Dealer Admin Login
+POST /api/auth/login
+
+# Jadwal Service (Dealer)
+GET    /api/schedules
+POST   /api/schedules
+PUT    /api/schedules/:id
+DELETE /api/schedules/:id
+
+# Booking Service (Customer)
+POST /api/bookings
+
+# Update Status Booking (Dealer)
+PUT /api/bookings/:id/status
