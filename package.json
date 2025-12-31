@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server.js",
+    "migrate": "node src/migrations/migrate.js",
     "seed": "node src/seeders/seed.js"
   },
   "keywords": [],

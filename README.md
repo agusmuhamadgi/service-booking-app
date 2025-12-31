@@ -46,10 +46,10 @@ DB_PASS=password123
 DB_NAME=service_booking
 JWT_SECRET=supersecretkey
 
-# 4. Setup Database & Seed
-npm run seed
 
-# 5. Jalankan Server
+# 4. Jalankan Server
+npm run migrate
+npm run seed
 npm run dev
 
 Dokumentasi Endpoint
